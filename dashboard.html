@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: #004085;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background: #002752;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background: #004085;
+            color: white;
+        }
+        .btn {
+            background: #004085;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #002752;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="dashboard.html">Home</a>
+    <a href="index.html">Bio-Data Form</a>
+    <a href="signup.html">sign-up</a>
+    <a href="login.html">login</a>
+    <a href="logout.html" class="logout-btn">Logout</a>
+
+</div>
+
+<div class="content">
+    <h1>Welcome to BioForm Military Dashboard</h1>
+
+    <div class="card">
+        <h3>Statistics</h3>
+        <p>Total Registered Personnel: <strong>350</strong></p>
+        <p>Pending Approvals: <strong>12</strong></p>
+    </div>
+
+    <div class="card">
+        <h3>Registered Personnel</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Rank</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>John Doe</td>
+                <td>Sergeant</td>
+                <td>Approved</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Jane Smith</td>
+                <td>Lieutenant</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Mike Johnson</td>
+                <td>Captain</td>
+                <td>Approved</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="index.html" class="btn">Go to Bio-Data Form</a>
+    <div class="logo-container">
+        <a href="dashboard.html">
+            <img src="images/nhislogo.png" alt="Naval Logistics Logo" class="left-logo">
+            <img src="images/dhm_logo.png" alt="Naval Logistics Logo" class="right-logo">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Military Personnel Bio-Data Form</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Sidebar -->
+<div class="nav-links">
+    <a href="dashboard.html"> Home</a>
+    <a href="index.html">Bio-Data Form</a>
+    <a href="signup.html">Sign-up</a>
+    <a href="login.html">Login</a>
+    <a href="logout.html" class="logout-btn">Logout</a>
+
+
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="images/nhislogo.png" alt="Naval Logistics Logo" class="left-logo">
+            <img src="images/dhm_logo.png" alt="Naval Logistics Logo" class="righ-logo">
+        </a>
+    </div>
+
+
+
+
+    <style>
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #004085;
+        }
+        h2 {
+            color: #004085;
+        }
+
+        h2, h3, h4 {
+            color: #004085;
+            font-weight: bold;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 50%;
+            padding: 6px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 30px;
+        }
+                }
+        textarea {
+            height: 60px;
+        }
+        .limited-slot {
+            width: 150px;
+            height: 150px;
+            border: 1px dashed #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+        button {
+            background: #004085;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #002752;
+        }
+    </style>
+    <body>
+    <h2>NATIONAL HEALTH INSURANCE SCHEME</h2>
+    <h3>DHML/NHIS MILITARY PERSONNEL (SERVING) BIO-DATA FORM</h3>
+    <h4>ARMED FORCES SOCIAL HEALTH INSURANCE PROGRAMME (AFSHIP)</h4>
+
+    <h3>1.Personal Data:</h3>
+    <label>Surname:</label>
+    <input type="text" name="surname" required>
+
+    <label>First Name:</label>
+    <input type="text" name="first_name" required>
+
+    <label>Middle Name (Optional):</label>
+    <input type="text" name="middle_name">
+
+    </body>
+
+    <label>2.Service No: <input type="text" name="serviceno" required></label>
+
+    <label>3.State of Origin:
+        <select name="state_of_origin">
+            <option value="">Select State</option>
+            <option value="Abia">Abia</option>
+            <option value="Adamawa">Adamawa</option>
+            <option value="Akwa Ibom">Akwa Ibom</option>
+            <option value="Anambra">Anambra</option>
+            <option value="Bauchi">Bauchi</option>
+            <option value="Bayelsa">Bayelsa</option>
+            <option value="Benue">Benue</option>
+            <option value="Borno">Borno</option>
+            <option value="Cross River">Cross River</option>
+            <option value="Delta">Delta</option>
+            <option value="Ebonyi">Ebonyi</option>
+            <option value="Edo">Edo</option>
+            <option value="Ekiti">Ekiti</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Gombe">Gombe</option>
+            <option value="Imo">Imo</option>
+            <option value="Jigawa">Jigawa</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Katsina">Katsina</option>
+            <option value="Kebbi">Kebbi</option>
+            <option value="Kogi">Kogi</option>
+            <option value="Kwara">Kwara</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Nasarawa">Nasarawa</option>
+            <option value="Niger">Niger</option>
+            <option value="Ogun">Ogun</option>
+            <option value="Ondo">Ondo</option>
+            <option value="Osun">Osun</option>
+            <option value="Oyo">Oyo</option>
+            <option value="Plateau">Plateau</option>
+            <option value="Rivers">Rivers</option>
+            <option value="Sokoto">Sokoto</option>
+            <option value="Taraba">Taraba</option>
+            <option value="Yobe">Yobe</option>
+            <option value="Zamfara">Zamfara</option>
+            <option value="FCT">FCT</option>
+        </select>
+    </label>
+    <label>4.Date of Birth: <input type="date" name="dob" required></label>
+    <label>5.Sex:
+        <select name="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </label>
+
+    <h3>6.Marital Status</h3>
+<label>Select Marital Status:</label>
+<select name="marital_status" id="maritalStatus" onchange="toggleSpouseDetails()">
+    <option value="">Select</option>
+    <option value="Single">Single</option>
+    <option value="Married">Married</option>
+    <option value="Divorced">Divorced</option>
+</select>
+
+<div id="spouseDetails" style="display: none; margin-top: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+    <h3>Spouse Details</h3>
+    <label>Spouse Title:</label>
+    <select name="spouse_title">
+        <option value="">Select Title</option>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Prof">Prof</option>
+        <option value="Dr">Dr</option>
+        <option value="Engr">Engr</option>
+        <option value="Rev">Rev</option>
+        <option value="Chief">Chief</option>
+        <option value="Others">Others</option>
+    </select>
+    <label>Spouse Surname:</label>
+    <input type="text" name="spouse_surname">
+    <label>Spouse First Name:</label>
+    <input type="text" name="spouse_first_name">
+    <label>Spouse Middle Name (Optional):</label>
+    <input type="text" name="spouse_middle_name">
+</div>
+
+<script>
+    function toggleSpouseDetails() {
+        var maritalStatus = document.getElementById("maritalStatus").value;
+        var spouseDetails = document.getElementById("spouseDetails");
+
+        if (maritalStatus === "Married") {
+            spouseDetails.style.display = "block";
+        } else {
+            spouseDetails.style.display = "none";
+            document.querySelector("[name='spouse_surname']").value = "";
+            document.querySelector("[name='spouse_first_name']").value = "";
+            document.querySelector("[name='spouse_middle_name']").value = "";
+        }
+    }
+</script>
+
+<label>7.Age: <input type="number" name="age" min="18" required></label>
+
+    <label>8.Blood Group:
+        <select name="blood_group">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </label>
+
+    <label>9.National ID (NIN): <input type="text" name="nin" required></label>
+    <label>10.Telephone Number: +234 <input type="text" name="phone" required></label>
+    <p id="phoneError" style="color: red;"></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const phoneInput = document.getElementById("phone_number");
+            const errorMessage = document.getElementById("phoneError");
+
+            phoneInput.addEventListener("input", function () {
+                let phoneNumber = phoneInput.value;
+
+                // Remove non-numeric characters
+                phoneNumber = phoneNumber.replace(/\D/g, "");
+
+                // Check if the input contains only numbers and has a valid length (10-15 digits)
+                if (!/^\d{10,15}$/.test(phoneNumber)) {
+                    errorMessage.textContent = "❌ Please enter a valid phone number (10-15 digits only).";
+                    phoneInput.style.borderColor = "red";
+                } else {
+                    errorMessage.textContent = "";
+                    phoneInput.style.borderColor = "green";
+                }
+
+                // Update the input field with only numbers
+                phoneInput.value = phoneNumber;
+            });
+        });
+    </script>
+    <label>11.State of Origin:
+        <select name="state_of_origin">
+            <option value="">Select State</option>
+            <option value="Abia">Abia</option>
+            <option value="Adamawa">Adamawa</option>
+            <option value="Akwa Ibom">Akwa Ibom</option>
+            <option value="Anambra">Anambra</option>
+            <option value="Bauchi">Bauchi</option>
+            <option value="Bayelsa">Bayelsa</option>
+            <option value="Benue">Benue</option>
+            <option value="Borno">Borno</option>
+            <option value="Cross River">Cross River</option>
+            <option value="Delta">Delta</option>
+            <option value="Ebonyi">Ebonyi</option>
+            <option value="Edo">Edo</option>
+            <option value="Ekiti">Ekiti</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Gombe">Gombe</option>
+            <option value="Imo">Imo</option>
+            <option value="Jigawa">Jigawa</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Katsina">Katsina</option>
+            <option value="Kebbi">Kebbi</option>
+            <option value="Kogi">Kogi</option>
+            <option value="Kwara">Kwara</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Nasarawa">Nasarawa</option>
+            <option value="Niger">Niger</option>
+            <option value="Ogun">Ogun</option>
+            <option value="Ondo">Ondo</option>
+            <option value="Osun">Osun</option>
+            <option value="Oyo">Oyo</option>
+            <option value="Plateau">Plateau</option>
+            <option value="Rivers">Rivers</option>
+            <option value="Sokoto">Sokoto</option>
+            <option value="Taraba">Taraba</option>
+            <option value="Yobe">Yobe</option>
+            <option value="Zamfara">Zamfara</option>
+            <option value="FCT">FCT</option>
+        </select>
+    </label>
+    <label>12.Residential Address: <textarea name="address" required></textarea></label>
+
+    <label><h3>13.Employer</h3></label>
+    <div class="employer-container">
+        <label>
+            <input type="radio" name="employer" value="Army" style="display: none;" onchange="updateEmployerSelection('Army')">
+            <img src="images/army_logo.png" alt="Army" width="90" height="90" id="armyLogo">
+        </label>
+
+        <label>
+            <input type="radio" name="employer" value="Navy" style="display: none;" onchange="updateEmployerSelection('Navy')">
+            <img src="images/navy_logo.png" alt="Navy" width="80" height="80" id="navyLogo">
+        </label>
+
+        <label>
+            <input type="radio" name="employer" value="Air Force" style="display: none;" onchange="updateEmployerSelection('Air Force')">
+            <img src="images/air-force_logo.png" alt="Air Force" width="80" height="80" id="airforceLogo">
+        </label>
+    </div>
+
+
+    <h3>14.Rank And Rate</h3>
+<select name="Rank and Rate" id="rateOrRank" onchange="toggleRankOptions()">
+    <option value="">Select Option</option>
+    <option value="Rate">Rate</option>
+    <option value="Rank">Rank</option>
+</select>
+
+<div id="rankSelection" style="display: none; margin-top: 15px;">
+    <label>Rank:</label>
+    <select name="Rank" id="rankDropdown"></select>
+</div>
+
+<div id="rateSelection" style="display: none; margin-top: 15px;">
+    <label>Rate:</label>
+    <select name="Rate" id="rateDropdown"></select>
+</div>
+
+<script>
+    const ranks = {
+        'Army': ["General", "Lieutenant General", "Major General", "Brigadier General", "Colonel", "Lieutenant Colonel", "Major", "Captain", "Lieutenant", "Second Lieutenant"],
+        'Navy': ["Admiral", "Vice Admiral", "Rear Admiral", "Commodore", "Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Sub-Lieutenant", "Midshipman"],
+        'Air Force': ["Air Chief Marshal", "Air Marshal", "Air Vice Marshal", "Air Commodore", "Group Captain", "Wing Commander", "Squadron Leader", "Flight Lieutenant", "Flying Officer", "Pilot Officer"]
+    };
+
+    const rates = {
+        'Army': ["Warrant Officer", "Staff Sergeant", "Sergeant", "Corporal", "Lance Corporal", "Private"],
+        'Navy': ["Warrant Chief Petty Officer", "Chief Petty Officer", "Petty Officer", "Leading Seaman", "Able Seaman", "Ordinary Seaman", "Trainee"],
+        'Air Force': ["Warrant Officer", "Flight Sergeant", "Sergeant", "Corporal", "Lance Corporal", "Aircraftman"]
+    };
+
+    function updateEmployerSelection(selected) {
+        document.getElementById("armyLogo").style.border = selected === "Army" ? "2px solid blue" : "2px solid transparent";
+        document.getElementById("navyLogo").style.border = selected === "Navy" ? "2px solid blue" : "2px solid transparent";
+        document.getElementById("airforceLogo").style.border = selected === "Air Force" ? "2px solid blue" : "2px solid transparent";
+
+        populateRankAndRate(selected);
+    }
+
+    function populateRankAndRate(branch) {
+        const rankDropdown = document.getElementById("rankDropdown");
+        const rateDropdown = document.getElementById("rateDropdown");
+
+        rankDropdown.innerHTML = '<option value="">Select Rank</option>';
+        rateDropdown.innerHTML = '<option value="">Select Rate</option>';
+
+        if (ranks[branch]) {
+            ranks[branch].forEach(rank => {
+                let option = document.createElement("option");
+                option.value = rank;
+                option.textContent = rank;
+                rankDropdown.appendChild(option);
+            });
+        }
+
+        if (rates[branch]) {
+            rates[branch].forEach(rate => {
+                let option = document.createElement("option");
+                option.value = rate;
+                option.textContent = rate;
+                rateDropdown.appendChild(option);
+            });
+        }
+    }
+
+    function toggleRankOptions() {
+        var selection = document.getElementById("rateOrRank").value;
+        var rankSelection = document.getElementById("rankSelection");
+        var rateSelection = document.getElementById("rateSelection");
+
+        if (selection === "Rank") {
+            rankSelection.style.display = "block";
+            rateSelection.style.display = "none";
+        } else if (selection === "Rate") {
+            rateSelection.style.display = "block";
+            rankSelection.style.display = "none";
+        } else {
+            rankSelection.style.display = "none";
+            rateSelection.style.display = "none";
+        }
+    }
+</script>
+
+
+
+<div id="rankSelection" style="display: none; margin-top: 15px;">
+    <label>Rank:</label>
+    <select name="Rank" id="rankDropdown">
+        <option value="">Select Rank</option>
+        <option value="Admiral">Admiral</option>
+        <option value="Vice Admiral">Vice Admiral</option>
+        <option value="Rear Admiral">Rear Admiral</option>
+        <option value="Commodore">Commodore</option>
+        <option value="Captain">Captain</option>
+        <option value="Commander">Commander</option>
+        <option value="Lieutenant Commander">Lieutenant Commander</option>
+        <option value="Lieutenant">Lieutenant</option>
+        <option value="Sub-Lieutenant">Sub-Lieutenant</option>
+        <option value="Midshipman">Midshipman</option>
+    </select>
+</div>
+
+<div id="rateSelection" style="display: none; margin-top: 15px;">
+    <label>Rate:</label>
+    <select name="Rate" id="rateDropdown">
+        <option value="">Select Rank</option>
+        <option value="Warrant Chief Petty Officer">Warrant Chief Petty Officer</option>
+        <option value="Chief Petty Officer">Chief Petty Officer</option>
+        <option value="Petty Officer">Petty Officer</option>
+        <option value="Leading Seaman">Leading Seaman</option>
+        <option value="Able Seaman">Able Seaman</option>
+        <option value="Ordinary Seaman">Ordinary Seaman</option>
+        <option value="Trainee">Trainee</option>
+    </select>
+</div>
+
+<script>
+    function toggleRankOptions() {
+        var selection = document.getElementById("rateOrRank").value;
+        var rankSelection = document.getElementById("rankSelection");
+        var rateSelection = document.getElementById("rateSelection");
+        var rankDropdown = document.getElementById("rankDropdown");
+        var rateDropdown = document.getElementById("rateDropdown");
+
+        if (selection === "Rank") {
+            rankSelection.style.display = "block";
+            rateSelection.style.display = "none";
+            rankDropdown.disabled = false;
+            rateDropdown.disabled = true;
+            rateDropdown.value = "";
+        } else if (selection === "Rate") {
+            rateSelection.style.display = "block";
+            rankSelection.style.display = "none";
+            rateDropdown.disabled = false;
+            rankDropdown.disabled = true;
+            rankDropdown.value = "";
+        } else {
+            rankSelection.style.display = "none";
+            rateSelection.style.display = "none";
+            rankDropdown.disabled = true;
+            rateDropdown.disabled = true;
+            rankDropdown.value = "";
+            rateDropdown.value = "";
+        }
+    }
+</script>
+
+    <h3>15.Medical History</h3>
+<label>Select Medical Condition:</label>
+<select name="medical_history" id="medicalHistory" onchange="toggleOtherMedical()">
+    <option value="">Select</option>
+    <option value="Diabetes">Diabetes</option>
+    <option value="Epilepsy">Epilepsy</option>
+    <option value="Hypertension">Hypertension</option>
+    <option value="Sickle Cell Disease">Sickle Cell Disease</option>
+    <option value="Allergies">Allergies</option>
+    <option value="Other">Other</option>
+</select>
+
+<div id="otherMedicalDiv" style="display: none; margin-top: 10px;">
+    <label>Specify Other Condition:</label>
+    <input type="text" name="other_medical" id="otherMedical">
+</div>
+
+<script>
+    function toggleOtherMedical() {
+        var medicalHistory = document.getElementById("medicalHistory").value;
+        var otherMedicalDiv = document.getElementById("otherMedicalDiv");
+        var otherMedical = document.getElementById("otherMedical");
+
+        if (medicalHistory === "Other") {
+            otherMedicalDiv.style.display = "block";
+            otherMedical.required = true;
+        } else {
+            otherMedicalDiv.style.display = "none";
+            otherMedical.required = false;
+            otherMedical.value = "";
+        }
+    }
+</script>
+
+    <h3>16. Dependant Provider's Data</h3>
+    <label>Name (PHC):</label>
+    <input type="text" name="dependant_name" required>
+
+    <label>Code No (PHC):</label>
+    <div style="display: flex; gap: 5px;">
+        <input type="text" id="code1" maxlength="3" pattern="[A-Za-z0-9]{3}" required>
+        <span>-</span>
+        <input type="text" id="code2" maxlength="4" pattern="[A-Za-z0-9]{4}" required>
+        <span>-</span>
+        <input type="text" id="code3" maxlength="1" pattern="[A-Za-z0-9]{1}" required>
+    </div>
+
+    <script>
+        // Automatically move to the next field when max length is reached
+        document.getElementById("code1").addEventListener("input", function() {
+            if (this.value.length === this.maxLength) {
+                document.getElementById("code2").focus();
+            }
+        });
+
+        document.getElementById("code2").addEventListener("input", function() {
+            if (this.value.length === this.maxLength) {
+                document.getElementById("code3").focus();
+            }
+        });
+    </script>
+
+<h3> 17.Spouse Details</h3>
+
+<h4>Spouse</h4>
+<label>Title:</label>
+<select name="spouse_title">
+    <option value="">Select Title</option>
+    <option value="Mr">Mr</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Prof">prof</option>
+    <option value="Engr">Engr</option>
+    <option value="Chief">Chief</option>
+    <option value="Rev">Rev</option>
+    <option value="Dr">Dr</option>
+    <option value="Others">Others</option>
+</select>
+
+<label>First Name:</label>
+<input type="text" name="spouse_first_name" required>
+
+<label>Middle Name (Optional):</label>
+<input type="text" name="spouse_middle_name">
+
+<label>Surname:</label>
+<input type="text" name="spouse_surname" required>
+
+<label>Sex:</label>
+<select name="spouse_sex">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select>
+
+    <label>Is the spouse a personnel?</label>
+    <div>
+        <input type="radio" id="personnel_yes" name="spouse_personnel" value="yes" onchange="togglePersonnelOptions()" required>
+        <label for="personnel_yes">Yes</label>
+
+        <input type="radio" id="personnel_no" name="spouse_personnel" value="no" onchange="togglePersonnelOptions()" required>
+        <label for="personnel_no">No</label>
+    </div>
+
+    <!-- Personnel Options (Hidden by Default) -->
+    <div id="personnel_options" style="display: none;">
+        <label>Branch:</label>
+        <select name="spouse_branch" id="spouse_branch" onchange="toggleRankOptions()">
+            <option value="">Select Branch</option>
+            <option value="Army">Army</option>
+            <option value="Navy">Navy</option>
+            <option value="Airforce">Air Force</option>
+        </select>
+
+        <label>Rate/Rank:</label>
+        <select name="spouse_rank_type" id="spouse_rank_type" onchange="updateRankDropdown()">
+            <option value="">Select Rate/Rank</option>
+            <option value="Commissioned">Commissioned Officer</option>
+            <option value="Non-Commissioned">Non-Commissioned Officer</option>
+        </select>
+
+        <label>Exact Rank:</label>
+        <select name="spouse_rank" id="spouse_rank">
+            <option value="">Select Exact Rank</option>
+        </select>
+    </div>
+
+    <script>
+        function togglePersonnelOptions() {
+            let personnelYes = document.getElementById("personnel_yes").checked;
+            let personnelOptions = document.getElementById("personnel_options");
+
+            if (personnelYes) {
+                personnelOptions.style.display = "block";
+            } else {
+                personnelOptions.style.display = "none";
+            }
+        }
+
+        function updateRankDropdown() {
+            let branch = document.getElementById("spouse_branch").value;
+            let rankType = document.getElementById("spouse_rank_type").value;
+            let rankDropdown = document.getElementById("spouse_rank");
+
+            let ranks = {
+                "Army": {
+                    "Commissioned": ["Second Lieutenant", "Lieutenant", "Captain", "Major", "Lieutenant Colonel", "Colonel", "Brigadier General", "Major General", "Lieutenant General", "General"],
+                    "Non-Commissioned": ["Corporal", "Sergeant", "Staff Sergeant", "Warrant Officer", "Master Warrant Officer"]
+                },
+                "Navy": {
+                    "Commissioned": ["Midshipman", "Sub-Lieutenant", "Lieutenant", "Lieutenant Commander", "Commander", "Captain", "Commodore", "Rear Admiral", "Vice Admiral", "Admiral"],
+                    "Non-Commissioned": ["Able Seaman", "Leading Seaman", "Petty Officer", "Chief Petty Officer", "Warrant Officer"]
+                },
+                "Airforce": {
+                    "Commissioned": ["Pilot Officer", "Flying Officer", "Flight Lieutenant", "Squadron Leader", "Wing Commander", "Group Captain", "Air Commodore", "Air Vice Marshal", "Air Marshal", "Air Chief Marshal"],
+                    "Non-Commissioned": ["Aircraftman", "Leading Aircraftman", "Corporal", "Sergeant", "Warrant Officer"]
+                }
+            };
+
+            // Clear previous options
+            rankDropdown.innerHTML = '<option value="">Select Exact Rank</option>';
+
+            if (branch && rankType && ranks[branch][rankType]) {
+                ranks[branch][rankType].forEach(rank => {
+                    let option = document.createElement("option");
+                    option.value = rank;
+                    option.textContent = rank;
+                    rankDropdown.appendChild(option);
+                });
+            }
+        }
+    </script>
+
+
+    <label>18.Blood Group:</label>
+<select name="spouse_blood_group">
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+</select>
+
+<label>19.Date of Birth:</label>
+<input type="date" name="spouse_dob">
+
+<label>20.State of Origin:
+    <select name="state_of_origin">
+        <option value="">Select State</option>
+        <option value="Abia">Abia</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom">Akwa Ibom</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+        <option value="Borno">Borno</option>
+        <option value="Cross River">Cross River</option>
+        <option value="Delta">Delta</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Kano">Kano</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Kebbi">Kebbi</option>
+        <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Ogun">Ogun</option>
+        <option value="Ondo">Ondo</option>
+        <option value="Osun">Osun</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="FCT">FCT</option>
+    </select>
+</label>
+    <label>21. Local Government of Residence:</label>
+    <select id="spouse_state" name="spouse_state" onchange="populateSpouseLGA()">
+        <option value="">Select State</option>
+        <option value="Abia">Abia</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom">Akwa Ibom</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+        <option value="Borno">Borno</option>
+        <option value="Cross River">Cross River</option>
+        <option value="Delta">Delta</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Kano">Kano</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Kebbi">Kebbi</option>
+        <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Ogun">Ogun</option>
+        <option value="Ondo">Ondo</option>
+        <option value="Osun">Osun</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="FCT">FCT</option>
+    </select>
+
+    <select id="spouse_lga" name="spouse_lga">
+        <option value="">Select LGA</option>
+    </select>
+
+    <script>
+        const lgasByState = {
+    "Abia": ["Aba North", "Aba South", "Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isiala Ngwa South", "Isuikwuato", "Obi Ngwa", "Ohafia", "Osisioma", "Ugwunagbo", "Ukwa East", "Ukwa West", "Umuahia North", "Umuahia South", "Umunneochi"],
+    "Adamawa": ["Demsa", "Fufore", "Ganye", "Girei", "Gombi", "Guyuk", "Hong", "Jada", "Lamurde", "Madagali", "Maiha", "Mayo Belwa", "Michika", "Mubi North", "Mubi South", "Numan", "Shelleng", "Song", "Toungo", "Yola North", "Yola South"],
+    "Akwa Ibom": ["Abak", "Eastern Obolo", "Eket", "Esit Eket", "Essien Udim", "Etim Ekpo", "Etinan", "Ibeno", "Ibesikpo Asutan", "Ibiono Ibom", "Ika", "Ikono", "Ikot Abasi", "Ikot Ekpene", "Ini", "Itu", "Mbo", "Mkpat Enin", "Nsit Atai", "Nsit Ibom", "Nsit Ubium", "Obot Akara", "Okobo", "Onna", "Oron", "Oruk Anam", "Udung Uko", "Ukanafun", "Uruan", "Urue-Offong/Oruko", "Uyo"],
+    "Anambra": ["Aguata", "Anambra East", "Anambra West", "Anaocha", "Awka North", "Awka South", "Ayamelum", "Dunukofia", "Ekwusigo", "Idemili North", "Idemili South", "Ihiala", "Njikoka", "Nnewi North", "Nnewi South", "Ogbaru", "Onitsha North", "Onitsha South", "Orumba North", "Orumba South", "Oyi"],
+    "Bauchi": ["Alkaleri", "Bauchi", "Bogoro", "Damban", "Darazo", "Dass", "Ganjuwa", "Giade", "Itas/Gadau", "Jama'are", "Katagum", "Kirfi", "Misau", "Ningi", "Shira", "Tafawa Balewa", "Toro", "Warji", "Zaki"],
+    "Bayelsa": ["Brass", "Ekeremor", "Kolokuma/Opokuma", "Nembe", "Ogbia", "Sagbama", "Southern Ijaw", "Yenagoa"],
+    "Benue": ["Ado", "Agatu", "Apa", "Buruku", "Gboko", "Guma", "Gwer East", "Gwer West", "Katsina-Ala", "Konshisha", "Kwande", "Logo", "Makurdi", "Obi", "Ogbadibo", "Ohimini", "Oju", "Okpokwu", "Otukpo", "Tarka", "Ukum", "Ushongo", "Vandeikya"],
+    "Borno": ["Abadam", "Askira/Uba", "Bama", "Bayo", "Biu", "Chibok", "Damboa", "Dikwa", "Gubio", "Guzamala", "Gwoza", "Hawul", "Jere", "Kaga", "Kala/Balge", "Konduga", "Kukawa", "Kwaya Kusar", "Mafa", "Magumeri", "Maiduguri", "Marte", "Mobbar", "Monguno", "Ngala", "Nganzai", "Shani"],
+    "Cross River": ["Abi", "Akamkpa", "Akpabuyo", "Bakassi", "Bekwarra", "Biase", "Boki", "Calabar Municipal", "Calabar South", "Etung", "Ikom", "Obanliku", "Obubra", "Obudu", "Odukpani", "Ogoja", "Yakuur", "Yala"],
+    "Delta": ["Aniocha North", "Aniocha South", "Bomadi", "Burutu", "Ethiope East", "Ethiope West", "Ika North East", "Ika South", "Isoko North", "Isoko South", "Ndokwa East", "Ndokwa West", "Okpe", "Oshimili North", "Oshimili South", "Patani", "Sapele", "Udu", "Ughelli North", "Ughelli South", "Ukwuani", "Uvwie", "Warri North", "Warri South", "Warri South West"],
+    "Ebonyi": ["Abakaliki", "Afikpo North", "Afikpo South", "Ebonyi", "Ezza North", "Ezza South", "Ikwo", "Ishielu", "Ivo", "Izzi", "Ohaukwu", "Onicha"],
+    "Edo": ["Akoko-Edo", "Egor", "Esan Central", "Esan North-East", "Esan South-East", "Esan West", "Etsako Central", "Etsako East", "Etsako West", "Igueben", "Ikpoba-Okha", "Oredo", "Orhionmwon", "Ovia North-East", "Ovia South-West", "Owan East", "Owan West", "Uhunmwonde"],
+    "Ekiti": ["Ado Ekiti", "Efon", "Ekiti East", "Ekiti South-West", "Ekiti West", "Emure", "Gbonyin", "Ido-Osi", "Ijero", "Ikere", "Ikole", "Ilejemeje", "Irepodun/Ifelodun", "Ise/Orun", "Moba", "Oye"],
+    "Enugu": ["Aninri", "Awgu", "Enugu East", "Enugu North", "Enugu South", "Ezeagu", "Igbo Etiti", "Igbo Eze North", "Igbo Eze South", "Isi Uzo", "Nkanu East", "Nkanu West", "Nsukka", "Oji River", "Udenu", "Udi", "Uzo-Uwani"],
+    "FCT": ["Abaji", "Bwari", "Gwagwalada", "Kuje", "Kwali", "Municipal Area Council"],
+    "Lagos": ["Agege", "Ajeromi-Ifelodun", "Alimosho", "Amuwo-Odofin", "Apapa", "Badagry", "Epe", "Eti-Osa", "Ibeju-Lekki", "Ifako-Ijaiye", "Ikeja", "Ikorodu", "Kosofe", "Lagos Island", "Lagos Mainland", "Mushin", "Ojo", "Oshodi-Isolo", "Shomolu", "Surulere"],
+    "Ogun": ["Abeokuta North", "Abeokuta South", "Ado-Odo/Ota", "Ewekoro", "Ifo", "Ijebu East", "Ijebu North", "Ijebu North East", "Ijebu Ode", "Ikenne", "Imeko Afon", "Ipokia", "Obafemi Owode", "Odeda", "Odogbolu", "Ogun Waterside", "Remo North", "Shagamu", "Yewa North", "Yewa South"],
+   "Rivers": ["Abua/Odual", "Ahoada East", "Ahoada West", "Akuku-Toru", "Andoni", "Asari-Toru", "Bonny", "Degema", "Eleme", "Emuoha", "Etche", "Gokana", "Ikwerre", "Khana", "Obio/Akpor", "Ogba/Egbema/Ndoni", "Ogu/Bolo", "Okrika", "Omuma", "Opobo/Nkoro", "Oyigbo", "Port Harcourt", "Tai"],
+    "Gombe": ["Akko", "Balanga", "Billiri", "Dukku", "Funakaye", "Gombe", "Kaltungo", "Kwami", "Nafada", "Shomgom", "Yamaltu/Deba"],
+     "Imo": ["Aboh Mbaise", "Ahiazu Mbaise", "Ehime Mbano", "Ezinihitte", "Ideato North", "Ideato South", "Ihitte/Uboma", "Ikeduru", "Isiala Mbano", "Isu", "Mbaitoli", "Ngor Okpala", "Njaba", "Nkwerre", "Nwangele", "Obowo", "Oguta", "Ohaji/Egbema", "Okigwe", "Orlu", "Orsu", "Oru East", "Oru West", "Owerri Municipal", "Owerri North", "Owerri West", "Unuimo"],
+    "Jigawa": ["Auyo", "Babura", "Biriniwa", "Birnin Kudu", "Buji", "Dutse", "Gagarawa", "Garki", "Gumel", "Guri", "Gwaram", "Gwiwa", "Hadejia", "Jahun", "Kafin Hausa", "Kaugama", "Kazaure", "Kiri Kasama", "Kiyawa", "Maigatari", "Malam Madori", "Miga", "Ringim", "Roni", "Sule Tankarkar", "Taura", "Yankwashi"],
+    "Kaduna": ["Birnin Gwari", "Chikun", "Giwa", "Igabi", "Ikara", "Jaba", "Jema'a", "Kachia", "Kaduna North", "Kaduna South", "Kagarko", "Kajuru", "Kaura", "Kauru", "Kubau", "Kudan", "Lere", "Makarfi", "Sabon Gari", "Sanga", "Soba", "Zangon Kataf", "Zaria"],
+    "Kano": ["Ajingi", "Albasu", "Bagwai", "Bebeji", "Bichi", "Bunkure", "Dala", "Dambatta", "Dawakin Kudu", "Dawakin Tofa", "Doguwa", "Fagge", "Gabasawa", "Garko", "Garun Mallam", "Gaya", "Gezawa", "Gwale", "Gwarzo", "Kabo", "Kano Municipal", "Karaye", "Kibiya", "Kiru", "Kumbotso", "Kunchi", "Kura", "Madobi", "Makoda", "Minjibir", "Nasarawa", "Rano", "Rimin Gado", "Rogo", "Shanono", "Sumaila", "Takai", "Tarauni", "Tofa", "Tsanyawa", "Tudun Wada", "Ungogo", "Warawa", "Wudil"],
+    "Katsina": ["Bakori", "Batagarawa", "Batsari", "Baure", "Bindawa", "Charanchi", "Dan Musa", "Dandume", "Danja", "Daura", "Dutsi", "Dutsin Ma", "Faskari", "Funtua", "Ingawa", "Jibia", "Kafur", "Kaita", "Kankara", "Kankia", "Katsina", "Kurfi", "Kusada", "Mai'Adua", "Malumfashi", "Mani", "Mashi", "Matazu", "Musawa", "Rimi", "Sabuwa", "Safana", "Sandamu", "Zango"],
+    "Kebbi": ["Aleiro", "Arewa Dandi", "Argungu", "Augie", "Bagudo", "Birnin Kebbi", "Bunza", "Dandi", "Fakai", "Gwandu", "Jega", "Kalgo", "Koko/Besse", "Maiyama", "Ngaski", "Sakaba", "Shanga", "Suru", "Wasagu/Danko", "Yauri", "Zuru"],
+    "Kogi": ["Adavi", "Ajaokuta", "Ankpa", "Bassa", "Dekina", "Ibaji", "Idah", "Igalamela Odolu", "Ijumu", "Kabba/Bunu", "Kogi", "Lokoja", "Mopa-Muro", "Ofu", "Ogori/Magongo", "Okehi", "Okene", "Olamaboro", "Omala", "Yagba East", "Yagba West"],
+    "Kwara": ["Asa", "Baruten", "Edu", "Ekiti", "Ifelodun", "Ilorin East", "Ilorin South", "Ilorin West", "Irepodun", "Isin", "Kaiama", "Moro", "Offa", "Oke Ero", "Oyun", "Pategi"],
+    "Nasarawa": ["Akwanga", "Awe", "Doma", "Karu", "Keana", "Keffi", "Kokona", "Lafia", "Nasarawa", "Nasarawa Egon", "Obi", "Toto", "Wamba"],
+    "Niger": ["Agaie", "Agwara", "Bida", "Borgu", "Bosso", "Chanchaga", "Edati", "Gbako", "Gurara", "Katcha", "Kontagora", "Lapai", "Lavun", "Magama", "Mariga", "Mashegu", "Mokwa", "Munya", "Paikoro", "Rafi", "Rijau", "Shiroro", "Suleja", "Tafa", "Wushishi"],
+    "Ogun": ["Abeokuta North", "Abeokuta South", "Ado-Odo/Ota", "Egbado North", "Egbado South", "Ewekoro", "Ifo", "Ijebu East", "Ijebu North", "Ijebu North East", "Ijebu Ode", "Ikenne", "Imeko Afon", "Ipokia", "Obafemi Owode", "Odeda", "Odogbolu", "Remo North", "Sagamu"],
+    "Ondo": ["Akoko North-East", "Akoko North-West", "Akoko South-East", "Akoko South-West", "Akure North", "Akure South", "Ese Odo", "Idanre", "Ifedore", "Ilaje", "Ile Oluji/Okeigbo", "Irele", "Odigbo", "Okitipupa", "Ondo East", "Ondo West", "Ose", "Owo"],
+
+    "Plateau": ["Barkin Ladi", "Bassa", "Bokkos", "Jos East", "Jos North", "Jos South", "Kanam", "Kanke", "Langtang North", "Langtang South", "Mangu", "Mikang", "Pankshin", "Qua'an Pan", "Riyom", "Shendam", "Wase"],
+    "Zamfara": ["Anka", "Bakura", "Birnin Magaji/Kiyaw", "Bukkuyum", "Bungudu", "Gummi", "Gusau", "Kaura Namoda", "Maradun", "Maru", "Shinkafi", "Talata Mafara", "Tsafe", "Zurmi"],
+    "Osun": ["Aiyedaade", "Aiyedire", "Atakunmosa East", "Atakunmosa West", "Boluwaduro", "Boripe", "Ede North", "Ede South", "Egbedore", "Ejigbo", "Ife Central", "Ife East", "Ife North", "Ife South", "Ifedayo", "Ifelodun", "Ila", "Ilesa East", "Ilesa West", "Irepodun", "Irewole", "Isokan", "Iwo", "Obokun", "Odo Otin", "Ola Oluwa", "Olorunda", "Oriade", "Orolu", "Osogbo"],
+    "Oyo": ["Afijio", "Akinyele", "Atiba", "Atisbo", "Egbeda", "Ibadan North", "Ibadan North-East", "Ibadan North-West", "Ibadan South-East", "Ibadan South-West", "Ibarapa Central", "Ibarapa East", "Ibarapa North", "Iddo", "Irepo", "Iseyin", "Itesiwaju", "Iwajowa", "Kajola", "Lagelu", "Ogbomosho North", "Ogbomosho South", "Ogo Oluwa", "Oluyole", "Ona Ara", "Orelope", "Ori Ire", "Olorunsogo", "Oyo East", "Oyo West", "Saki East", "Saki West", "Surulere"],
+    "Sokoto": ["Binji", "Bodinga", "Dange Shuni", "Gada", "Goronyo", "Gudu", "Gwadabawa", "Illela", "Isa", "Kebbe", "Kware", "Rabah", "Sabon Birni", "Shagari", "Silame", "Sokoto North", "Sokoto South", "Tambuwal", "Tangaza", "Tureta", "Wamako", "Wurno", "Yabo"],
+    "Taraba": ["Ardo Kola", "Bali", "Donga", "Gashaka", "Gassol", "Ibi", "Jalingo", "Karim Lamido", "Kurmi", "Lau", "Sardauna", "Takum", "Ussa", "Wukari", "Yorro", "Zing"],
+    "Yobe": ["Bade", "Bursari", "Damaturu", "Fika", "Fune", "Geidam", "Gujba", "Gulani", "Jakusko", "Karasuwa", "Machina", "Nangere", "Nguru", "Potiskum", "Tarmuwa", "Yunusari", "Yusufari"]
+};
+
+
+        function populateSpouseLGA() {
+            let stateSelect = document.getElementById("spouse_state");
+            let lgaSelect = document.getElementById("spouse_lga");
+            let selectedState = stateSelect.value;
+
+            lgaSelect.innerHTML = "<option value=''>Select LGA</option>";
+
+            if (selectedState && lgasByState[selectedState]) {
+                lgasByState[selectedState].forEach(lga => {
+                    let option = document.createElement("option");
+                    option.value = lga;
+                    option.textContent = lga;
+                    lgaSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+
+
+<h4>Children</h4>
+<div id="childrenContainer">
+
+</div>
+<button type="button" onclick="addChild()">Add Child</button>
+
+<script>
+    function addChild() {
+        let container = document.getElementById("childrenContainer");
+        let childCount = container.children.length + 1;
+        if (childCount > 4) {
+            alert("You can only add up to four children.");
+            return;
+        }
+        let childDiv = document.createElement("div");
+        childDiv.innerHTML = `
+            <h4>Child ${childCount}</h4>
+            <label>First Name:</label>
+            <input type="text" name="child_${childCount}_first_name" required>
+
+            <label>Middle Name (Optional):</label>
+            <input type="text" name="child_${childCount}_middle_name">
+
+            <label>Surname:</label>
+            <input type="text" name="child_${childCount}_surname" required>
+
+            <label>Sex:</label>
+            <select name="child_${childCount}_sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label>Blood Group:</label>
+            <select name="child_${childCount}_blood_group">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="child_${childCount}_dob">
+
+            <label>State of Residence:</label>
+            <select name="child_${childCount}_state">
+                <option value="">Select State</option>
+            </select>
+
+            <label>Local Government of Residence:</label>
+            <select name="child_${childCount}_lga">
+                <option value="">Select LGA</option>
+            </select>
+
+            <label>Telephone Number:</label>
+            <input type="text" name="child_${childCount}_phone">
+        `;
+        container.appendChild(childDiv);
+    }
+</script>
+<h3>Dependent Details</h3>
+<label>Spouse Title:</label>
+<select name="spouse_title">
+    <option value="">Select Title</option>
+    <option value="">Select Title</option>
+    <option value="Mr">Mr</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Prof">prof</option>
+    <option value="Engr">Engr</option>
+    <option value="Chief">Chief</option>
+    <option value="Rev">Rev</option>
+    <option value="Dr">Dr</option>
+    <option value="Others">Others</option>
+</select>
+
+<label>Spouse Surname:</label>
+<input type="text" name="spouse_surname" required>
+
+<label>Spouse First Name:</label>
+<input type="text" name="spouse_first_name" required>
+
+<label>Spouse Middle Name (Optional):</label>
+<input type="text" name="spouse_middle_name">
+
+</div>
+<label>Sex:
+        <select name="spouse_sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </label>
+    <label>Blood Group:
+        <select name="spouse_blood_group">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </label>
+    <label>Date of Birth: <input type="date" name="spouse_dob"></label>
+
+
+
+
+
+<label>Passport Photo:</label>
+<div class="form-container">
+    <h2>Upload Your Passport Photograph.</h2>
+    <form id="uploadForm">
+        <div class="tooltip-container">
+            <label for="fileUpload">Choose a file (JPEG, PNG, PDF):</label>
+            <span class="tooltip-text">Must be at least 4MB</span>
+        </div>
+        <div class="tooltip-container">
+            <input type="file" id="fileUpload" name="file" accept=".jpg, .jpeg, .png, .pdf" required>
+            <span class="tooltip-text">Must be at least 4MB</span>
+        </div>
+        <p id="fileInfo"></p>
+        <div class="preview">
+            <img id="previewImage">
+        </div>
+        <br>
+        <div class="tooltip-container">
+            <button type="submit">Submit</button>
+            <span class="tooltip-text">Must be at least 4MB</span>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("fileUpload").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        const fileInfo = document.getElementById("fileInfo");
+        const previewImage = document.getElementById("previewImage");
+
+        if (file) {
+            // Check file type
+            const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+            if (!allowedTypes.includes(file.type)) {
+                fileInfo.textContent = "❌ Invalid file type. Please upload JPEG, PNG, or PDF.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            // Check file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                fileInfo.textContent = "❌ File size exceeds 5MB.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            fileInfo.textContent = `✅ File: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+
+            // Show image preview if it's an image
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.style.display = "none";
+            }
+        }
+    });
+
+    document.getElementById("uploadForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("✅ File uploaded successfully! (Server-side upload needs to be implemented)");
+    });
+</script>
+
+<script>
+    function validateFileSize(input) {
+        if (input.files.length > 0) {
+            let fileSize = input.files[0].size / 1024 / 1024; // Convert to MB
+            if (fileSize < 4) {
+                alert("File size must be at least 4MB");
+                input.value = "";
+            }
+        }
+    }
+</script>
+<title>Electronic Signature Upload</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .form-container {
+        max-width: 400px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="file"] {
+        margin-top: 10px;
+    }
+    .preview {
+        margin-top: 15px;
+    }
+    .preview img {
+        max-width: 100%;
+        height: auto;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Upload Electronic Signature</h2>
+    <form id="signatureForm">
+        <label for="e_signature">Choose a file (JPEG, PNG, PDF):</label>
+        <input type="file" id="e_signature" name="e_signature" accept=".jpg, .jpeg, .png, .pdf" required>
+        <p id="fileInfo"></p>
+        <div class="preview">
+            <img id="previewImage">
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("e_signature").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        const fileInfo = document.getElementById("fileInfo");
+        const previewImage = document.getElementById("previewImage");
+
+        if (file) {
+            // Check file type
+            const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+            if (!allowedTypes.includes(file.type)) {
+                fileInfo.textContent = "❌ Invalid file type. Please upload JPEG, PNG, or PDF.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            // Check file size (max 3MB)
+            if (file.size > 3 * 1024 * 1024) {
+                fileInfo.textContent = "❌ File size exceeds 3MB.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            fileInfo.textContent = `✅ File: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+
+            // Show image preview if it's an image
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.style.display = "none";
+            }
+        }
+    });
+
+    document.getElementById("signatureForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("✅ Signature uploaded successfully! (Server-side upload needs to be implemented)");
+    });
+</script>
+
+
+<h3>5. DHML Enrolment Officer's Details</h3>
+    <label>Name: <input type="text" name="officer_name"></label>
+<title>Electronic Signature Upload</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .form-container {
+        max-width: 400px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="file"] {
+        margin-top: 10px;
+    }
+    .preview {
+        margin-top: 15px;
+    }
+    .preview img {
+        max-width: 100%;
+        height: auto;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>DHML Enrolment Officer's Electronic Signature</h2>
+    <form id="signatureForm">
+        <label for="e_signature">Choose a file (JPEG, PNG, PDF):</label>
+        <input type="file" id="e_signature" name="e_signature" accept=".jpg, .jpeg, .png, .pdf" required>
+        <p id="fileInfo"></p>
+        <div class="preview">
+            <img id="previewImage">
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("e_signature").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        const fileInfo = document.getElementById("fileInfo");
+        const previewImage = document.getElementById("previewImage");
+
+        if (file) {
+            // Check file type
+            const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+            if (!allowedTypes.includes(file.type)) {
+                fileInfo.textContent = "❌ Invalid file type. Please upload JPEG, PNG, or PDF.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            // Check file size (max 3MB)
+            if (file.size > 3 * 1024 * 1024) {
+                fileInfo.textContent = "❌ File size exceeds 3MB.";
+                event.target.value = "";
+                previewImage.style.display = "none";
+                return;
+            }
+
+            fileInfo.textContent = `✅ File: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+
+            // Show image preview if it's an image
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.style.display = "none";
+            }
+        }
+    });
+
+    document.getElementById("signatureForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("✅ Signature uploaded successfully! (Server-side upload needs to be implemented)");
+    });
+</script>
+
+<form id="spouseForm">
+    <!-- All form fields go here -->
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("spouseForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents the default form submission (page reload)
+
+        // Collect form data
+        let formData = new FormData(this);
+
+        // Example: Send data to a server using fetch
+        fetch("your-server-endpoint.php", {
+            method: "POST",
+            body: formData
+        }).then(response => response.json())
+          .then(data => alert("Form submitted successfully!"))
+          .catch(error => alert("Error submitting form."));
+    });
+</script>
+
+
+
+
+
+
+<button type="button" onclick="printForm()">Print / Download PDF</button>
+<form>
+
+<script>
+    function printForm() {
+        window.print();
+    }
+
+    function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        let doc = new jsPDF();
+
+        html2canvas(document.querySelector("form")).then(canvas => {
+            let imgData = canvas.toDataURL('image/png');
+            let imgWidth = 190;
+            let imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            doc.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+            doc.save("Military_Bio_Data_Form.pdf");
+        });
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script>
+    function printForm() {
+        window.print();
+    }
+
+    function downloadPDF() {
+        html2canvas(document.querySelector("form")).then(canvas => {
+            let imgData = canvas.toDataURL('image/png');
+            let doc = new jsPDF();
+            doc.addImage(imgData, 'PNG', 10, 10, 190, 0);
+            doc.save("Military_Bio_Data_Form.pdf");
+        });
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script>
+    function printForm() {
+        window.print();
+    }
+
+    function downloadForm() {
+        const element = document.createElement('a');
+        const formData = document.querySelector('form').innerHTML;
+        const blob = new Blob([formData], { type: 'text/html' });
+        element.href = URL.createObjectURL(blob);
+        element.download = "Military_Bio_Data_Form.html";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+</script>
+</form>

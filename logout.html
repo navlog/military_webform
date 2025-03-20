@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Logout Function
+        function logoutUser() {
+            // Clear session storage or authentication tokens
+            localStorage.removeItem("user"); // If storing user data in localStorage
+            sessionStorage.clear();
+
+            // Redirect to login page after 3 seconds
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 3000);
+        }
+    </script>
+</head>
+<body onload="logoutUser()">
+
+<!-- Logo container (now inside body) -->
+<div class="logo-container">
+    <img src="images/nhislogo.png" alt="NHIS Logo" class="left-logo">
+    <img src="images/dhm_logo.png" alt="DHM Logo" class="right-logo">
+</div>
+
+<!-- Navigation Links -->
+<div class="nav-links">
+    <a href="dashboard.html">Home</a>
+    <a href="index.html">Bio-Data Form</a>
+    <a href="signup.html">Sign-up</a>
+    <a href="login.html">Login</a>
+    <a href="logout.html" class="logout-btn">Logout</a>
+</div>
+
+<!-- Logout Message -->
+<div class="logout-container">
+    <h2>You have been logged out successfully!</h2>
+    <p>Redirecting to login page...</p>
+    <p>If you are not redirected, <a href="login.html">click here</a>.</p>
+</div>
+
+</body>
+</html>
